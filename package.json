@@ -1,0 +1,40 @@
+{
+    "name": "otter-director-web",
+    "version": "2.0.0",
+    "private": true,
+    "dependencies": {
+        "bootstrap": "4.5.0",
+        "jquery": "3.5.1",
+        "node-sass": "4.14.1",
+        "react": "16.13.1",
+        "react-dom": "16.13.1",
+        "react-router-dom": "5.2.0",
+        "react-scripts": "3.4.1"
+    },
+    "devDependencies": {
+        "env-cmd": "10.1.0",
+        "source-map-explorer": "2.4.2"
+    },
+    "scripts": {
+        "analyze-build": "source-map-explorer 'build/static/js/*.js'",
+        "start": "react-scripts start",
+        "build:dev": "env-cmd -f .env.development npm run build",
+        "build:stg": "env-cmd -f .env.staging npm run build",
+        "build": "react-scripts build"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    }
+}
