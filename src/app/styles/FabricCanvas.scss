@@ -1,0 +1,61 @@
+@import "../App.scss";
+
+html {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.canvas-panel {
+  flex: 1;
+  height: calc(100vh - 77px);
+  position: relative;
+  background-color: #F4F4F4;
+}
+
+.main-area {
+  width: 100%;
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: calc(100vh - 129px);
+  padding-top: 46px;
+
+  .canvas-area {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: calc(100vh - 175px);
+
+    .canvas-container {
+      box-shadow: 3px 3px 3px #888888;
+      border: solid 1px black;
+      margin-top: 14px;
+      margin-bottom: 60px;
+    }
+  }
+
+  img {
+    transform: translateY(-50%) translateX(-50%);
+    top: 50%;
+    position: absolute;
+    left: 50%;
+    max-width: 100%;
+  }
+
+  .solid-colors .solidcolor {
+    width: 40px;
+    height: 40px;
+    display: table;
+    border-radius: 50%;
+    margin: 5px;
+    line-height: 34px;
+    float: left;
+    box-shadow: 0 0 2px -1px #000;
+    text-align: center;
+  }
+}

@@ -1,0 +1,381 @@
+@import "../App.scss";
+
+.left-side-panel {
+  transition: width .1s;
+
+  .side-panel-container {
+    height: calc(100vh - 77px);
+
+    .text-editer {
+      color: $darkBlueColor;
+    }
+
+    .first-title {
+      font-size: 14px;
+      line-height: 15px;
+      font-weight: normal;
+      color: $darkBlueColor;
+    }
+
+    .gradients-colors,
+    .patterns {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .grdcolor,
+    .solidcolor {
+      width: 37px;
+      height: 37px;
+      display: flex;
+      flex-wrap: wrap;
+      border-radius: 50%;
+      margin: 0 7px 14px;
+      box-shadow: 0 0 2px -1px #000;
+      text-align: center;
+    }
+
+    .addcolor {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px dashed #BDC1CC;
+      color: #BDC1CC;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .popover {
+      position: absolute;
+      z-index: 2;
+    }
+
+    .cover {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+
+    .solid-colors {
+      display: flex;
+      flex-wrap: wrap;
+
+      .solidcolor {
+        cursor: pointer;
+      }
+    }
+
+    .gradients-colors {
+      .grdcolor {
+        cursor: pointer;
+      }
+
+      .grdcol1 {
+        background-image: linear-gradient(#62ff00, yellow);
+      }
+
+      .grdcol2 {
+        background-image: linear-gradient(to right, red , yellow);
+      }
+
+      .grdcol3 {
+        background-image: linear-gradient(-90deg, #39d4cd, #ff9900);
+      }
+
+      .grdcol4 {
+        background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+      }
+
+      .gradcolorsection {
+        .swatch {
+          padding: 5px;
+          background: #fff;
+          border-radius: 1px;
+          box-shadow: 0 0 0 1px rgba(0, 0, 0, .1);
+          display: inline-block;
+          cursor: pointer;
+          margin-right: 10px;
+        }
+
+        .grad-color {
+          width: 36px;
+          height: 36px;
+          border-radius: 2px;
+        }
+
+        .grdsection {
+          display: flex;
+          align-items: center;
+          margin-bottom: 10px;
+
+          .verticalgradient {
+            background-image: linear-gradient(to right, black , white);
+          }
+
+          .radialgradient {
+            background-image: radial-gradient(white, white, black);
+          }
+        }
+      }
+    }
+
+    .patterns {
+      span {
+        height: 92px;
+        width: 92px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 0 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .pattern1 {
+        background-image: url('../images/img/pattern1.jpg');
+      }
+
+      .pattern2 {
+        background-image: url('../images/img/pattern2.jpg');
+
+      }
+
+      .pattern3 {
+        background-image: url('../images/img/pattern3.jpg');
+      }
+
+      .pattern4 {
+        background-image: url('../images/img/pattern4.jpg');
+      }
+
+      .pattern5 {
+        background-image: url('../images/img/pattern5.jpg');
+      }
+
+      .pattern6 {
+        background-image: url('../images/img/pattern6.jpg');
+      }
+
+      .pattern7 {
+        background-image: url('../images/img/pattern7.jpg');
+      }
+
+      .pattern8 {
+        background-image: url('../images/img/pattern8.jpg');
+      }
+
+      .pattern9 {
+        background-image: url('../images/img/pattern9.jpg');
+      }
+    }
+
+    .shapes {
+      margin-top: 10px !important;
+
+      .shape1 {
+        background-image: url('../images/elements/circle.svg');
+      }
+
+      .shape2 {
+        background-image: url('../images/elements/line.svg');
+      }
+
+      .shape3 {
+        background-image: url('../images/elements/rectangle.svg');
+      }
+
+      .shape4 {
+        background-image: url('../images/elements/square.svg');
+      }
+
+      .shape5 {
+        background-image: url('../images/elements/triangle.svg');
+      }
+
+      .shape6 {
+        background-image: url('../images/elements/ellipse.svg');
+      }
+
+      .icon1 {
+        background-image: url('../images/elements/Party_1233.svg');
+      }
+
+      .icon2 {
+        background-image: url('../images/elements/Party_1239.svg');
+      }
+
+      .icon3 {
+        background-image: url('../images/elements/Party_1241.svg');
+      }
+
+      .icon4 {
+        background-image: url('../images/elements/Party_1242.svg');
+      }
+
+      .icon5 {
+        background-image: url('../images/elements/Party_1245.svg');
+      }
+
+      .icon6 {
+        background-image: url('../images/elements/Party_1246.svg');
+      }
+
+      .clipart1 {
+        background-image: url('../images/elements/logo_1214.svg');
+      }
+
+      .clipart2 {
+        background-image: url('../images/elements/logo_1215.svg');
+      }
+
+      .clipart3 {
+        background-image: url('../images/elements/logo_1216.svg');
+      }
+
+      .clipart4 {
+        background-image: url('../images/elements/logo_1219.svg');
+      }
+
+      .clipart5 {
+        background-image: url('../images/elements/logo_1232.svg');
+      }
+
+      .clipart6 {
+        background-image: url('../images/elements/logo_1234.svg');
+      }
+    }
+
+    .elements {
+      .element1 {
+        background-image: url('../images/elements/closet.svg');
+      }
+
+      .element2 {
+        background-image: url('../images/elements/confetti.svg');
+      }
+
+      .element3 {
+        background-image: url('../images/elements/Email.svg');
+      }
+
+      .element4 {
+        background-image: url('../images/elements/facebook.svg');
+      }
+
+      .element5 {
+        background-image: url('../images/elements/gift.svg');
+      }
+
+      .element6 {
+        background-image: url('../images/elements/hat.svg');
+      }
+
+      .element7 {
+        background-image: url('../images/elements/fireplace.svg');
+      }
+
+      .element8 {
+        background-image: url('../images/elements/instagram.svg');
+      }
+
+      .element9 {
+        background-image: url('../images/elements/dryer.svg');
+      }
+    }
+  }
+
+  #vertical-tab-four,
+  #vertical-tab-one,
+  #vertical-tab-two {
+    overflow-y: auto;
+    height: 100%;
+  }
+
+  #vertical-tab-four,
+  #vertical-tab-three,
+  #vertical-tab-two {
+    .first-title {
+      margin-top: 25px;
+    }
+  }
+
+  #vertical-tab-three {
+    height: 100%;
+    padding: 0;
+
+    .nav-tabs {
+      padding-top: 30px;
+      margin: 0 23px;
+
+      .nav-link {
+        cursor: pointer;
+      }
+    }
+
+    .pixabaysection {
+      margin-top: 15px;
+
+      .searchbar {
+        margin: 10px 0;
+        padding: 0 23px;
+      }
+
+      .scroller {
+        max-height: calc(100vh - 225px);
+        overflow-y: auto;
+        padding: 0 23px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .image-wrapper {
+          height: 92px;
+          width: 92px;
+          display: table;
+          float: left;
+          margin: 0 5px 10px;
+          border-radius: 5px;
+          overflow: hidden;
+          cursor: pointer;
+
+          .pixabay {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+
+      #scroll-1::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        border-radius: 10px;
+        background-color: #F5F5F5;
+      }
+
+      #scroll-1::-webkit-scrollbar {
+        width: 8px;
+        background-color: #F5F5F5;
+      }
+
+      #scroll-1::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+        background-color: #555;
+      }
+    }
+  }
+
+  #vertical-tab-four {
+    .tab-content {
+      padding: 20px 0;
+    }
+
+    .nav-link {
+      cursor: pointer;
+    }
+  }
+}

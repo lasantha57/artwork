@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="246 -246 512 512" style="enable-background:new 246 -246 512 512;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#A25425;}
+	.st1{fill:#59340F;}
+	.st2{fill:#C87629;}
+	.st3{fill:#7F4122;}
+	.st4{fill:#B1C3D0;}
+	.st5{fill:#8EADBE;}
+	.st6{fill:#FFFFFF;}
+	.st7{fill:#F5B445;}
+	.st8{fill:#3CB44A;}
+	.st9{fill:#ED2C39;}
+</style>
+<g>
+	<polygon class="st0" points="634,-74 634,-170 490,-170 490,-74 550,-74 550,-62 490,-62 490,178 634,178 634,-62 562,-62 562,-74 
+			"/>
+	<path class="st1" d="M376,190v6c0,3.3,2.7,6,6,6h18c3.3,0,7.2-2.4,8.7-5.4l3.3-6.7H376z"/>
+	<path class="st1" d="M592,190l3.3,6.7c1.5,3,5.4,5.4,8.7,5.4h18c3.3,0,6-2.7,6-6v-6H592z"/>
+	<rect x="370" y="-170" class="st0" width="108" height="54"/>
+	<rect x="370" y="-104" class="st0" width="108" height="54"/>
+	<rect x="370" y="-38" class="st0" width="108" height="54"/>
+	<rect x="370" y="28" class="st0" width="108" height="54"/>
+	<path class="st2" d="M634-182l-114,0H370c-6.6,0-12,5.4-12,12v348c0,6.6,5.4,12,12,12h150l114,0c6.6,0,12-5.4,12-12v-348
+		C646-176.6,640.6-182,634-182z M478,178H370V94h108V178z M478,82H370V28h108V82z M478,16H370v-54h108V16z M478-50H370v-54h108V-50z
+		 M478-116H370v-54h108V-116z M634,178l-144,0v-282h144V178z M634-116H490v-54l144,0V-116z"/>
+	<rect x="370" y="94" class="st0" width="108" height="84"/>
+	<path class="st3" d="M370-170v12v42h12v-18c0-13.3,10.7-24,24-24l72,0v-12L370-170z"/>
+	<path class="st3" d="M490-170v12v42h12v-18c0-13.3,10.7-24,24-24l108,0v-12L490-170z"/>
+	<path class="st3" d="M370-104v12v42h12v-18c0-13.3,10.7-24,24-24h72v-12H370z"/>
+	<path class="st3" d="M370-38v12v42h12V-2c0-13.3,10.7-24,24-24h72v-12H370z"/>
+	<rect x="490" y="-62" class="st3" width="12" height="240"/>
+	<polygon class="st4" points="490,-62 550,-62 550,-74 490,-74 	"/>
+	<rect x="562" y="-74" class="st4" width="72" height="12"/>
+	<rect x="490" y="-68" class="st5" width="60" height="6"/>
+	<rect x="562" y="-68" class="st5" width="72" height="6"/>
+	<path class="st6" d="M556-44L556-44c-3.3,0-6-2.7-6-6v-24c0-3.3,2.7-6,6-6l0,0c3.3,0,6,2.7,6,6v24C562-46.7,559.3-44,556-44z"/>
+	<path class="st6" d="M580-44L580-44c-3.3,0-6-2.7-6-6v-24c0-3.3,2.7-6,6-6l0,0c3.3,0,6,2.7,6,6v24C586-46.7,583.3-44,580-44z"/>
+	<path class="st6" d="M604-44L604-44c-3.3,0-6-2.7-6-6v-24c0-3.3,2.7-6,6-6l0,0c3.3,0,6,2.7,6,6v24C610-46.7,607.3-44,604-44z"/>
+	<path class="st6" d="M532-44L532-44c-3.3,0-6-2.7-6-6v-24c0-3.3,2.7-6,6-6l0,0c3.3,0,6,2.7,6,6v24C538-46.7,535.3-44,532-44z"/>
+	<rect x="400" y="124" class="st7" width="48" height="12"/>
+	<rect x="400" y="136" class="st3" width="48" height="6"/>
+	<path class="st7" d="M394-2L394-2c0-3.3,2.7-6,6-6h54c3.3,0,6,2.7,6,6l0,0c0,3.3-2.7,6-6,6h-54C396.7,4,394,1.3,394-2z"/>
+	<path class="st8" d="M388-14L388-14c0-3.3,2.7-6,6-6h54c3.3,0,6,2.7,6,6l0,0c0,3.3-2.7,6-6,6h-54C390.7-8,388-10.7,388-14z"/>
+	<path class="st9" d="M394-56L394-56c0-3.3,2.7-6,6-6h54c3.3,0,6,2.7,6,6l0,0c0,3.3-2.7,6-6,6h-54C396.7-50,394-52.7,394-56z"/>
+	<path class="st8" d="M388-68L388-68c0-3.3,2.7-6,6-6h54c3.3,0,6,2.7,6,6l0,0c0,3.3-2.7,6-6,6h-54C390.7-62,388-64.7,388-68z"/>
+	<path class="st9" d="M388,10L388,10c0-3.3,2.7-6,6-6h54c3.3,0,6,2.7,6,6l0,0c0,3.3-2.7,6-6,6h-54C390.7,16,388,13.3,388,10z"/>
+	<path class="st3" d="M370,28v12v42h12V64c0-13.3,10.7-24,24-24h72V28H370z"/>
+	<path class="st3" d="M490-104v12v18h12h0.8c2.7-10.3,12-18,23.2-18l108,0v-12L490-104z"/>
+</g>
+</svg>

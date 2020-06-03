@@ -1,0 +1,356 @@
+@import "../App.scss";
+
+.toolbar-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  border-left: 1px solid $lightBorderColor;
+  min-height: 46px;
+  background-color: #fff;
+  padding: 5px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+
+  .leftbar,
+  .rightbar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .toolbar-label {
+    color: $darkLightBlueColor;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .leftbar {
+    .font-familiy-container {
+      width: 160px;
+      margin-right: 35px;
+      color: $darkLightBlueColor;
+
+      > div {
+        position: relative;
+      }
+
+      #font-picker {
+        box-shadow: none;
+
+        .dropdown-button {
+          padding: 0;
+          background: white;
+
+          .dropdown-font-family {
+            color: $darkLightBlueColor;
+            font-size: 14px;
+            line-height: 16px;
+            font-weight: 600;
+          }
+
+          .dropdown-icon {
+            display: none;
+          }
+        }
+
+        > ul {
+          background: white;
+        }
+      }
+
+      .arrowimg {
+        position: absolute;
+        right: 0;
+        top: 11px;
+        width: 10px;
+        height: 10px;
+        cursor: pointer;
+      }
+    }
+
+    .font-size-container {
+      position: relative;
+      display: flex;
+      cursor: pointer;
+      margin-right: 35px;
+
+      select {
+        cursor: pointer;
+        background-color: white;
+        color: $darkLightBlueColor;
+        font-size: 14px;
+        line-height: 16px;
+        font-weight: 600;
+        border: 0;
+        margin: 0;
+        padding-right: 10px;
+        text-indent: .01px;
+        text-overflow: '';
+        /*Hiding the select arrow for firefox*/
+        -moz-appearance: none;
+        /*Hiding the select arrow for chrome*/
+        -webkit-appearance: none;
+        /*Hiding the select arrow default implementation*/
+        appearance: none;
+
+        /*Hiding the select arrow for IE10*/
+        &::-ms-expand {
+          display: none;
+        }
+      }
+
+      .arrowimg {
+        position: absolute;
+        right: 0;
+        top: 2px;
+        width: 10px;
+        height: 10px;
+        cursor: pointer;
+      }
+
+      select[disabled] {
+        color: rgba(0,0,0,.25);
+      }
+    }
+
+    .font-color-container {
+      width: 53px;
+      height: 28px;
+      border: 2px solid #ECECEC;
+      border-radius: 4px;
+      padding: 0 5px;
+      cursor: pointer;
+      margin-right: 35px;
+
+      .primcol {
+        float: left;
+        width: 24px;
+        height: 16px !important;
+        margin-top: 5px;
+        height: 100%;
+        background-color: #000;
+        border-radius: 2px;
+      }
+
+      .arrowimg {
+        float: right;
+        margin-top: 7px;
+        width: 10px;
+        height: 10px;
+      }
+    }
+
+    .font-style-container {
+      display: flex;
+      align-items: center;
+      margin-right: 10px;
+
+      > div {
+        margin-right: 25px;
+        cursor: pointer;
+      }
+
+      .toolbar-icon {
+        width: 12px;
+        height: 15px;
+      }
+    }
+
+    .overlap-container {
+      display: flex;
+      align-items: center;
+      margin-right: 10px;
+
+      > div {
+        margin-right: 25px;
+        cursor: pointer;
+      }
+
+      .overlapArrow {
+        width: 15px;
+        cursor: pointer;
+      }
+
+      i {
+        font-size: 13px;
+      }
+    }
+
+    .popup-content {
+      width: 281px !important;
+      min-height: 200px;
+
+      .control label {
+        margin-bottom: 0;
+      }
+
+      .effects {
+        .opacity-section {
+          padding: 14px 0;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+          .slider-view {
+            flex: 1;
+            padding: 0 17px;
+          }
+        }
+
+        .opacity {
+          margin-bottom: 5px;
+          padding: 0 17px;
+        }
+
+        .slider-view {
+          flex: 1;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          color: $mediumGreyColor;
+          font-size: 14px;
+          line-height: 18px;
+
+          > div {
+            min-width: 20px;
+          }
+
+          .opacityslider {
+            width: 200px;
+          }
+
+          .widthslider {
+            width: 145px;
+          }
+
+          .strokeslider {
+            width: 115px;
+          }
+
+          .slider {
+            -webkit-appearance: none;
+            height: 5px;
+            background: #d3d3d3;
+            outline: none;
+            opacity: .7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+
+            &:hover {
+              opacity: 1;
+            }
+
+            &::-webkit-slider-thumb {
+              -webkit-appearance: none;
+              appearance: none;
+              width: 15px;
+              height: 15px;
+              background: #4CAF50;
+              cursor: pointer;
+              border-radius: 50%;
+            }
+
+            &::-moz-range-thumb {
+              width: 15px;
+              height: 15px;
+              background: #4CAF50;
+              cursor: pointer;
+            }
+          }
+        }
+
+        .effsection {
+          padding: 14px 17px;
+          display: flex;
+          align-items: center;
+
+          &.separator {
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+          }
+
+          .toolbar-label {
+            width: 60px;
+
+            &.stroke-label {
+              width: 90px;
+            }
+          }
+        }
+      }
+    }
+
+    .strokepopupcontent {
+      width: 300px !important;
+      height: 132px;
+
+      .strokesection {
+        width: 100%;
+        height: 30px;
+        margin-top: 10px;
+        margin-left: 5px;
+
+        .stroke2 {
+          width: 40%;
+          float: left;
+        }
+
+        .stroke5 {
+          width: 18%;
+          border: 1px solid #cbcbcb;
+          border-radius: 5px;
+          float: left;
+        }
+
+        .stroke3 {
+          width: 60%;
+          float: left;
+        }
+
+        .strokecolpic {
+          top: 0 !important;
+        }
+
+        .strokevalue {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+
+  .rightbar {
+    display: flex;
+    align-items: center;
+
+    .btn-duplicate {
+      margin-right: 20px;
+      cursor: pointer;
+    }
+
+    .btn-delete .arrow {
+      width: 15px;
+      height: 18px;
+      cursor: pointer;
+    }
+  }
+
+  .elementeff {
+    display: none;
+  }
+
+  .strokeeff {
+    display: none;
+    margin-left: 10px;
+  }
+
+  .group {
+    display: none;
+  }
+
+  .ungroup {
+    display: none;
+  }
+
+}

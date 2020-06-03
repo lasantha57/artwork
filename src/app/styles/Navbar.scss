@@ -1,0 +1,83 @@
+@import "../App.scss";
+
+.navbar-container {
+  border-bottom: 1px solid $borderColor;
+  background-color: #fff;
+  padding-right: 27px;
+  padding-left: 34px;
+
+  .header-bar {
+    padding: 0;
+    color: $darkBlueColor;
+    height: 76px;
+
+    .navbar-collapse {
+      justify-content: flex-end;
+    }
+  }
+}
+
+.footer,
+.navbar-container {
+  .navbar-nav {
+    display: flex;
+    flex-direction: row !important;
+    align-items: center;
+  }
+
+  .nav-item {
+    &:last-child {
+      padding-right: 0;
+    }
+
+    .btn {
+      width: 156px;
+      height: 44px;
+      text-align: center;
+      border-radius: 4px;
+      margin-left: 14px;
+      font-size: 14px;
+      line-height: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &.btn-outline {
+        background: #fff;
+        color: $priamryColor;
+        border: 2px solid $priamryColor;
+      }
+
+      &.btn-fill {
+        background: $priamryColor;
+        color: #fff;
+      }
+    }
+  }
+
+  .nav-link {
+    padding: 0;
+    color: $mediumGreyColor;
+    font-size: 14px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    padding: 0 !important;
+    margin: 0 0 0 10px;
+
+    > label {
+      margin-bottom: 0;
+      margin-left: 9px;
+    }
+
+    &.brand {
+      color: inherit;
+      font-size: 18px;
+      line-height: 20px;
+    }
+
+    &.btn-close {
+      margin-left: 26px;
+    }
+  }
+}

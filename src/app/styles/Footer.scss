@@ -1,0 +1,129 @@
+@import "../App.scss";
+
+.footer {
+  border-left: 1px solid #ececec;
+  position: absolute;
+  bottom: 0;
+  height: 50px;
+  background-color: #fff;
+  text-align: center;
+  padding: 0 14px;
+
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+
+    .left-view {
+      display: flex;
+      align-items: center;
+
+      .btn-action {
+        display: flex;
+        align-items: center;
+      }
+
+      .undoicon {
+        color: $lightGreyColor;
+        cursor: pointer;
+      }
+
+      .redoicon {
+        color: $lightGreyColor;
+        cursor: pointer;
+      }
+
+      .first {
+        margin: 0 6px;
+      }
+
+      .second {
+        color: $darkBlueColor;
+        font-size: 14px;
+        line-height: 15px;
+      }
+
+      .divider {
+        float: left;
+        border: 1px solid #E7E7E7;
+        height: 23px;
+        width: 1px;
+        margin: 0 14px;
+      }
+    }
+
+    .canvassize {
+      color: $darkBlueColor;
+      text-align: center;
+    }
+
+    .right-view {
+      display: flex;
+      align-items: center;
+
+      .minus,
+      .plus {
+        font-size: 18px;
+        line-height: 26px;
+        color: $darkBlueColor;
+        font-weight: bold;
+        margin: 0 10px;
+        cursor: pointer;
+      }
+
+      .select-container {
+        position: relative;
+
+        select {
+          width: 70px;
+          height: 26px;
+          border: 2px solid #ECECEC;
+          border-radius: 4px;
+          -moz-appearance: none;
+          -webkit-appearance: none;
+          appearance: none;
+          background: #FFF;
+          font-size: 14px;
+          line-height: 26px;
+          color: $darkBlueColor;
+          text-transform: uppercase;
+          outline: none;
+          padding-left: 10px;
+          transition: .2s;
+        }
+
+        select:focus,
+        select:hover {
+          box-shadow: 3px 3px 10px #eee;
+        }
+
+        select:-moz-focusring {
+          color: transparent;
+          text-shadow: 0 0 0 #000;
+        }
+
+        select::-ms-expand {
+          display: none;
+        }
+
+        .select-arrow {
+          color: #666;
+          right: 10px;
+          top: 8px;
+          font-size: 12px;
+          position: absolute;
+          display: block;
+          z-index: 10;
+          margin: 0;
+          pointer-events: none;
+        }
+      }
+    }
+  }
+
+  .nav-item {
+    width: 115px;
+  }
+}
