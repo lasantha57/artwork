@@ -97,6 +97,12 @@ class LeftPanel extends React.Component {
         //query:'woods'
     };
 
+    constructor(props) {
+        super(props);
+        this.iScrollRef = React.createRef();
+        this.imgScrollRef = React.createRef();
+    }
+
     componentDidMount() {
         let bgcolArray = localStorage.getItem("bgcolors");
         if (bgcolArray) {
@@ -109,18 +115,18 @@ class LeftPanel extends React.Component {
         this.pixaybay();
         this.unsplash();
 
-        this.refs.iScroll.addEventListener("scroll", () => {
+        this.iScrollRef.current.addEventListener("scroll", () => {
             if (
-                this.refs.iScroll.scrollTop + this.refs.iScroll.clientHeight >=
-                this.refs.iScroll.scrollHeight
+                this.iScrollRef.scrollTop + this.iScrollRef.clientHeight >=
+                this.iScrollRef.scrollHeight
             ) {
                 this.incerment();
             }
         });
-        this.refs.imgScroll.addEventListener("scroll", () => {
+        this.imgScrollRef.current.addEventListener("scroll", () => {
             if (
-                this.refs.imgScroll.scrollTop + this.refs.imgScroll.clientHeight >=
-                this.refs.imgScroll.scrollHeight
+                this.imgScrollRef.scrollTop + this.imgScrollRef.clientHeight >=
+                this.imgScrollRef.scrollHeight
             ) {
                 this.incermentpage();
             }
@@ -756,7 +762,7 @@ class LeftPanel extends React.Component {
                                             <Form className="searchbar">
                                                 <Input type="text" onKeyPress={(event) => this.searchImage(event)} placeholder="Search Images" />
                                             </Form>
-                                            <div ref="iScroll" className="scroller" id="scroll-1">
+                                            <div ref={this.iScrollRef} className="scroller" id="scroll-1">
                                                 {this.state.apiImg.map((img, index) => (
                                                     <span className="image-wrapper" key={index} onClick={() => this.addImage(img.largeImageURL)}>
                                                         <img className="pixabay" src={img.largeImageURL} alt="" />
@@ -774,7 +780,7 @@ class LeftPanel extends React.Component {
                                             <Form className="searchbar">
                                                 <Input type="text" onKeyPress={(event) => this.searchUnsplashimg(event)} placeholder="Search Images" />
                                             </Form>
-                                            <div ref="imgScroll" className="scroller" id="scroll-1">
+                                            <div ref={this.imgScrollRef} className="scroller" id="scroll-1">
                                                 {this.state.unsplashImg.map((photo, index) => {
                                                     return (
                                                         <span className="image-wrapper" key={index} onClick={() => this.addImage(photo.urls.regular)}>

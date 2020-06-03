@@ -2,6 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import registerServiceWorker from './registerServiceWorker';
+
+import 'bootstrap/dist/css/bootstrap.css';
+import 'react-web-tabs/dist/react-web-tabs.css';
+
 import App from './app/App';
 
 ReactDOM.render(
