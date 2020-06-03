@@ -37,6 +37,11 @@ class Toolbar extends React.Component {
         },
     };
 
+    constructor(props) {
+        super(props);
+        this.textcolorRef = React.createRef();
+    }
+
     componentDidMount() {
         $(".strokeeff").hide();
         $(".iconbar").hide();
@@ -289,7 +294,7 @@ class Toolbar extends React.Component {
 
     setColor = (color) => {
         this.changeObjectColor(color.hex);
-        ReactDOM.findDOMNode(this.refs.textcolor).style.background = color.hex;
+        ReactDOM.findDOMNode(this.textcolorRef.current).style.background = color.hex;
     };
 
     pickerOpen = () => {
@@ -774,7 +779,7 @@ class Toolbar extends React.Component {
 
                     <div className="font-color-container">
                         <div className="colrsec" onClick={this.pickerOpen}>
-                            <div ref="textcolor" className="primcol textcolpick" />
+                            <div ref={this.textcolorRef} className="primcol textcolpick" />
                             <img className="arrowimg" src={require('../images/down-arrow.png')} alt="" />
                         </div>
                     </div>
