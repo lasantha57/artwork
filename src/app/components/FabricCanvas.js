@@ -44,7 +44,8 @@ class FabricCanvas extends React.Component {
         initCenteringGuidelines(this.canvas);
         initAligningGuidelines(this.canvas);
         this.initCanvasEvents();
-        this.setcanvasBG(this.props.state.defaultbg);
+        // remove canvas image
+        //this.setcanvasBG(this.props.state.defaultbg);
         //this updates the props also
         this.setState({
             displaybgColorPicker: false

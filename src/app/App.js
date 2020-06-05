@@ -28,7 +28,7 @@ class App extends Component {
             sidebarWidth: 367,
             canvaswidth: 640,
             canvasheight: 360,
-            defaultbg: require('./images/main-img.jpg'),
+            //defaultbg: require('./images/main-img.jpg'),
             fontBoldValue: 'normal',
             fontItalicValue: '',
             fontUnderlineValue: '',
@@ -160,15 +160,15 @@ class App extends Component {
         const { sidebarWidth, collapse } = this.state;
 
         return (
-            <Container>
+            <Container fluid>
                 <Row className="navbar-container">
                     <Col>
                         <nav className="navbar navbar-expand-lg header-bar">
                             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="{null}bs-example-navbar-collapse-1">
                                 <span className="navbar-toggler-icon"></span>
                             </button>
-                            <a className="navbar-brand" href="/"><img src={require('./images/logo.jpg')} alt="" /></a>
-                            <div className="left-link"><span className="nav-link brand">Artwork Editor</span></div>
+                            {/* <a className="navbar-brand" href="/"><img src={require('./images/logo.png')} alt="" /></a> */}
+                            <div className="left-link"><span className="nav-link brand">Otter Artwork Editor</span></div>
                         </nav>
                     </Col>
                     <Col>
@@ -180,9 +180,6 @@ class App extends Component {
                                     </li>
                                     <li className="nav-item active download">
                                         <span className="btn btn-fill" onClick={this.downloadAsPNG}>Export Artwork</span>
-                                    </li>
-                                    <li className="nav-item">
-                                        <span className="nav-link btn-close" href="/"><img src={require('./images/close.jpg')} alt="" /></span>
                                     </li>
                                 </ul>
                             </div>
