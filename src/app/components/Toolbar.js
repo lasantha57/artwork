@@ -836,10 +836,10 @@ class Toolbar extends React.Component {
 
                     <div className="overlap-container">
                         <div title="Horizontalflip" onClick={this.horizontalflip} className="horizontalflip">
-                            <i className="arrow fa fa-shield fa-rotate-270" aria-hidden="true"></i>
+                            <i className="fas fa-ruler-vertical fa-rotate-270" aria-hidden="true"></i>
                         </div>
                         <div title="Verticalflip" onClick={this.verticalflip} className="verticalflip">
-                            <i className="arrow fa fa-shield fa-flip-vertical" aria-hidden="true"></i>
+                            <i className="fas fa-ruler-vertical"></i>
                         </div>
                     </div>
 
