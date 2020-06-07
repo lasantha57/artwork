@@ -626,10 +626,10 @@ class LeftPanel extends React.Component {
                     <Container>
                         <Row>
                             <Col>
-                                <p className="btn btn-primary" onClick={this.showUploadPopup}>Upload BG</p>
+                                <p className="btn btn-primary btn-sm" onClick={this.showUploadPopup}>Upload BG</p>
                             </Col>
                             <Col>
-                                <p className="btn btn-primary" onClick={this.deleteCanvasBg}>Remove BG</p>
+                                <p className="btn btn-primary btn-sm" onClick={this.deleteCanvasBg}>Remove BG</p>
                             </Col>
                         </Row>
                         <Row>
