@@ -1,15 +1,6 @@
 import React from 'react';
-import {
-    fabric
-}
-    from 'fabric';
-import {
-    saveCanvasState,
-    initCenteringGuidelines,
-    initAligningGuidelines,
-    selectObject
-}
-    from './Helpers'
+import { fabric } from 'fabric';
+import { saveCanvasState, initCenteringGuidelines, initAligningGuidelines, selectObject } from './Helpers'
 import $ from 'jquery';
 
 class FabricCanvas extends React.Component {
@@ -19,7 +10,7 @@ class FabricCanvas extends React.Component {
     };
 
     updateState(e) {
-        var stateoptions = {};
+        let stateoptions = {};
         if (e) {
             stateoptions = {
                 fontBoldValue: e.target.fontWeight,

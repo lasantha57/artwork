@@ -1,7 +1,4 @@
-import {
-    fabric
-}
-    from 'fabric';
+import { fabric } from 'fabric';
 import $ from 'jquery';
 
 //Function to remove duplicate items from the array.
