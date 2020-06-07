@@ -24,55 +24,55 @@ const INIT_SOLID_COLORS = [
     '#ffffff'
 ]
 
-const INIT_PATTERN_IMAGES = [
-    require('../images/img/pattern1.jpg'),
-    require('../images/img/pattern2.jpg'),
-    require('../images/img/pattern3.jpg'),
-    require('../images/img/pattern4.jpg'),
-    require('../images/img/pattern5.jpg'),
-    require('../images/img/pattern6.jpg'),
-    require('../images/img/pattern7.jpg'),
-    require('../images/img/pattern8.jpg'),
-    require('../images/img/pattern9.jpg')
-]
+// const INIT_PATTERN_IMAGES = [
+//     require('../images/img/pattern1.jpg'),
+//     require('../images/img/pattern2.jpg'),
+//     require('../images/img/pattern3.jpg'),
+//     require('../images/img/pattern4.jpg'),
+//     require('../images/img/pattern5.jpg'),
+//     require('../images/img/pattern6.jpg'),
+//     require('../images/img/pattern7.jpg'),
+//     require('../images/img/pattern8.jpg'),
+//     require('../images/img/pattern9.jpg')
+// ]
 
 const INIT_ELEMENT_ICONS = [
     require('../images/elements/circle.svg'),
     require('../images/elements/rectangle.svg'),
     require('../images/elements/square.svg'),
     require('../images/elements/triangle.svg'),
-    require('../images/elements/ellipse.svg')
+    // require('../images/elements/ellipse.svg')
 ]
 
-const INIT_ELEMENT_SHAPES = [
-    require('../images/elements/Party_1233.svg'),
-    require('../images/elements/Party_1239.svg'),
-    require('../images/elements/Party_1241.svg'),
-    require('../images/elements/Party_1242.svg'),
-    require('../images/elements/Party_1245.svg'),
-    require('../images/elements/Party_1246.svg')
-]
+// const INIT_ELEMENT_SHAPES = [
+//     require('../images/elements/Party_1233.svg'),
+//     require('../images/elements/Party_1239.svg'),
+//     require('../images/elements/Party_1241.svg'),
+//     require('../images/elements/Party_1242.svg'),
+//     require('../images/elements/Party_1245.svg'),
+//     require('../images/elements/Party_1246.svg')
+// ]
 
-const INIT_ELEMENT_CLIPARTS = [
-    require('../images/elements/logo_1214.svg'),
-    require('../images/elements/logo_1215.svg'),
-    require('../images/elements/logo_1216.svg'),
-    require('../images/elements/logo_1219.svg'),
-    require('../images/elements/logo_1232.svg'),
-    require('../images/elements/logo_1234.svg')
-]
+// const INIT_ELEMENT_CLIPARTS = [
+//     require('../images/elements/logo_1214.svg'),
+//     require('../images/elements/logo_1215.svg'),
+//     require('../images/elements/logo_1216.svg'),
+//     require('../images/elements/logo_1219.svg'),
+//     require('../images/elements/logo_1232.svg'),
+//     require('../images/elements/logo_1234.svg')
+// ]
 
-const INIT_ELEMENT_ELEMENTS = [
-    require('../images/elements/closet.svg'),
-    require('../images/elements/confetti.svg'),
-    require('../images/elements/Email.svg'),
-    require('../images/elements/facebook.svg'),
-    require('../images/elements/gift.svg'),
-    require('../images/elements/hat.svg'),
-    require('../images/elements/fireplace.svg'),
-    require('../images/elements/instagram.svg'),
-    require('../images/elements/dryer.svg')
-]
+// const INIT_ELEMENT_ELEMENTS = [
+//     require('../images/elements/closet.svg'),
+//     require('../images/elements/confetti.svg'),
+//     require('../images/elements/Email.svg'),
+//     require('../images/elements/facebook.svg'),
+//     require('../images/elements/gift.svg'),
+//     require('../images/elements/hat.svg'),
+//     require('../images/elements/fireplace.svg'),
+//     require('../images/elements/instagram.svg'),
+//     require('../images/elements/dryer.svg')
+// ]
 
 class LeftPanel extends React.Component {
     state = {
@@ -94,7 +94,6 @@ class LeftPanel extends React.Component {
         unsplashsearchkey: 'woods',
         client_id: "10c09efaf736d64b6c6f38d93620399aca995d73f0379c86995521375dff759d",
         pagenum: 1
-        //query:'woods'
     };
 
     constructor(props) {
@@ -482,7 +481,7 @@ class LeftPanel extends React.Component {
     }
 
     pixaybay = () => {
-        fetch("https://pixabay.com/api/?key=11095386-871fd43c33a92700d9bffb82d&q=" + this.state.searchkey + "&image_type=photo&pretty=true&page=" + this.state.page + "&per_page=24&safesearch=true")
+        fetch("//pixabay.com/api/?key=11095386-871fd43c33a92700d9bffb82d&q=" + this.state.searchkey + "&image_type=photo&pretty=true&page=" + this.state.page + "&per_page=24&safesearch=true")
             .then(res => res.json())
             .then(
                 (result) => {
@@ -500,7 +499,7 @@ class LeftPanel extends React.Component {
     }
 
     unsplash = () => {
-        fetch("https://api.unsplash.com/search/photos/?client_id=" + this.state.client_id + "&per_page=24&query=" + this.state.unsplashsearchkey + "&page=" + this.state.pagenum + "")
+        fetch("//api.unsplash.com/search/photos/?client_id=" + this.state.client_id + "&per_page=24&query=" + this.state.unsplashsearchkey + "&page=" + this.state.pagenum + "")
             .then(res => res.json())
             .then(data => {
                 this.setState({ unsplashImg: data.results });
@@ -714,7 +713,7 @@ class LeftPanel extends React.Component {
                                 </div>
                             </Col>
                         </Row>
-                        <Row>
+                        {/* <Row>
                             <Col>
                                 <p className="first-title">Patterns</p>
                                 <div className="patterns">
@@ -727,7 +726,7 @@ class LeftPanel extends React.Component {
                                     ))}
                                 </div>
                             </Col>
-                        </Row>
+                        </Row> */}
                     </Container>
                 </TabPanel>
                 <TabPanel tabId="vertical-tab-three">
@@ -850,7 +849,7 @@ class LeftPanel extends React.Component {
                                             </Col>
                                         </Row>
                                     </TabPane>
-                                    <TabPane tabId="2">
+                                    {/* <TabPane tabId="2">
                                         <Row>
                                             <Col sm="12">
                                                 <p>Icons</p>
@@ -865,8 +864,8 @@ class LeftPanel extends React.Component {
                                                 </div>
                                             </Col>
                                         </Row>
-                                    </TabPane>
-                                    <TabPane tabId="3">
+                                    </TabPane> */}
+                                    {/* <TabPane tabId="3">
                                         <Row>
                                             <Col sm="12">
                                                 <p>Clip Arts</p>
@@ -881,10 +880,10 @@ class LeftPanel extends React.Component {
                                                 </div>
                                             </Col>
                                         </Row>
-                                    </TabPane>
+                                    </TabPane> */}
                                 </TabContent>
 
-                                <p>Elements</p>
+                                {/* <p>Elements</p>
                                 <p className="btn btn-primary" onClick={this.uploadIcon}>Upload Icon</p>
                                 <div className="patterns elements">
                                     {INIT_ELEMENT_ELEMENTS.map((item, index) => (
@@ -894,7 +893,7 @@ class LeftPanel extends React.Component {
                                             onClick={() => this.addSVG(item)}
                                         />
                                     ))}
-                                </div>
+                                </div> */}
                             </Col>
                         </Row>
                     </Container>
