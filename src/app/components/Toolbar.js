@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { fabric } from 'fabric';
 import { SketchPicker } from 'react-color';
 import FontPicker from 'font-picker-react';
@@ -11,12 +10,13 @@ var FontFaceObserver = require('fontfaceobserver');
 
 class Toolbar extends React.Component {
     state = {
+        textColor: '',
+        glowColor: '',
+        strokeColor: '',
         value: '6',
         opacityval: '1',
         strokeval: '1',
         blurval: '1',
-        glowcolor: '',
-        strokecolor: '',
         offsetX: '1',
         offsetY: '1',
         activeFontFamily: "Open Sans",
@@ -96,7 +96,7 @@ class Toolbar extends React.Component {
                         offsetX: activeObject.shadow.offsetX,
                         blurval: activeObject.shadow.blur,
                         offsetY: activeObject.shadow.offsetY,
-                        glowcolor: activeObject.shadow.color,
+                        glowColor: activeObject.shadow.color,
                         glowbackgroundcol: activeObject.shadow.color,
                         glowcollapse: true,
                         glowchecked: true
@@ -108,7 +108,7 @@ class Toolbar extends React.Component {
                         offsetX: 1,
                         blurval: 1,
                         offsetY: 1,
-                        glowcolor: '',
+                        glowColor: '',
                         glowcollapse: false,
                         glowbackgroundcol: '',
                         glowchecked: false
@@ -117,7 +117,7 @@ class Toolbar extends React.Component {
 
                 if (activeObject.strokeWidth && activeObject.stroke) {
                     this.setState({
-                        strokecolor: activeObject.stroke,
+                        strokeColor: activeObject.stroke,
                         backgroundcol: activeObject.stroke,
                         strokeval: activeObject.strokeWidth,
                         collapse: true,
@@ -126,7 +126,7 @@ class Toolbar extends React.Component {
                 } else {
 
                     this.setState({
-                        strokecolor: '',
+                        strokeColor: '',
                         backgroundcol: '',
                         strokeval: 1,
                         collapse: false,
@@ -297,7 +297,8 @@ class Toolbar extends React.Component {
 
     setColor = (color) => {
         this.changeObjectColor(color.hex);
-        ReactDOM.findDOMNode(this.textcolorRef.current).style.background = color.hex;
+        this.setState({ textColor: color.hex });
+        this.textcolorRef.current.style.background = color.hex;
     };
 
     pickerOpen = () => {
@@ -339,9 +340,9 @@ class Toolbar extends React.Component {
     setStroke = (color) => {
         this.changeObjectproperty('stroke', color.hex);
         this.setState({
-            strokecolor: color.hex
-        })
-        ReactDOM.findDOMNode(this.textstrokecolRef.current).style.background = color.hex;
+            strokeColor: color.hex
+        });
+        this.textstrokecolRef.current.style.background = color.hex;
     };
 
     changeObjectColor = (hex) => {
@@ -452,14 +453,14 @@ class Toolbar extends React.Component {
             this.changeObjectproperty('stroke', null);
         } else {
             this.changeObjectproperty('strokeWidth', this.state.strokeval);
-            this.changeObjectproperty('stroke', this.state.strokecolor);
+            this.changeObjectproperty('stroke', this.state.strokeColor);
         }
     }
 
     setGlow = (color) => {
-        ReactDOM.findDOMNode(this.textglowcolRef.current).style.background = color.hex;
+        this.textglowcolRef.current.style.background = color.hex;
         this.setState({
-            glowcolor: color.hex
+            glowColor: color.hex
         });
         var canvas = this.props.state.canvas;
         var activeObject = canvas.getActiveObject();
@@ -483,7 +484,7 @@ class Toolbar extends React.Component {
         if (activeObject) {
             activeObject.setShadow({
                 blur: event.target.value,
-                color: this.state.glowcolor,
+                color: this.state.glowColor,
                 offsetX: this.state.offsetX,
                 offsetY: this.state.offsetY,
             });
@@ -500,7 +501,7 @@ class Toolbar extends React.Component {
         if (activeObject) {
             activeObject.setShadow({
                 blur: this.state.blurval,
-                color: this.state.glowcolor,
+                color: this.state.glowColor,
                 offsetX: event.target.value,
                 offsetY: this.state.offsetY,
             });
@@ -517,7 +518,7 @@ class Toolbar extends React.Component {
         if (activeObject) {
             activeObject.setShadow({
                 blur: this.state.blurval,
-                color: this.state.glowcolor,
+                color: this.state.glowColor,
                 offsetX: this.state.offsetX,
                 offsetY: event.target.value
             });
@@ -544,7 +545,7 @@ class Toolbar extends React.Component {
         } else {
             if (activeObject) {
                 activeObject.setShadow({
-                    color: this.state.glowcolor,
+                    color: this.state.glowColor,
                     blur: this.state.blurval,
                     offsetX: this.state.offsetX,
                     offsetY: this.state.offsetY
@@ -790,7 +791,7 @@ class Toolbar extends React.Component {
                     {this.state.displayColorPicker
                         ? <div style={popover}>
                             <div style={cover} onClick={this.pickerClose} />
-                            <SketchPicker color={this.state.background} onChangeComplete={this.setColor} />
+                            <SketchPicker color={this.state.textColor} onChangeComplete={this.setColor} />
                         </div>
                         : null
                     }
@@ -888,7 +889,7 @@ class Toolbar extends React.Component {
                                         {this.state.displaystrokeColorPicker
                                             ? <div style={strokepopover}>
                                                 <div style={strokecover} onClick={this.strokepickerClose} />
-                                                <SketchPicker color={this.state.background} onChangeComplete={this.setStroke} />
+                                                <SketchPicker color={this.state.strokeColor} onChangeComplete={this.setStroke} />
                                             </div>
                                             : null
                                         }
@@ -929,7 +930,7 @@ class Toolbar extends React.Component {
                                         {this.state.displayglowColorPicker
                                             ? <div style={glowpopover}>
                                                 <div style={glowcover} onClick={this.glowpickerClose} />
-                                                <SketchPicker color={this.state.background} onChangeComplete={this.setGlow} />
+                                                <SketchPicker color={this.state.glowColor} onChangeComplete={this.setGlow} />
                                             </div>
                                             : null
                                         }
@@ -1029,7 +1030,7 @@ class Toolbar extends React.Component {
                                                 this.state.displaystrokeColorPicker
                                                     ? <div style={strokepopover} className="strokecolpic">
                                                         <div style={strokecover} onClick={this.strokepickerClose} />
-                                                        <SketchPicker color={this.state.background} onChangeComplete={this.setStroke} />
+                                                        <SketchPicker color={this.state.strokeColor} onChangeComplete={this.setStroke} />
                                                     </div>
                                                     : null
                                             }
