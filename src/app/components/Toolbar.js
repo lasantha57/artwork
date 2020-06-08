@@ -40,6 +40,9 @@ class Toolbar extends React.Component {
     constructor(props) {
         super(props);
         this.textcolorRef = React.createRef();
+        this.pickerRef = React.createRef();
+        this.textstrokecolRef = React.createRef();
+        this.textglowcolRef = React.createRef();
     }
 
     componentDidMount() {
@@ -338,7 +341,7 @@ class Toolbar extends React.Component {
         this.setState({
             strokecolor: color.hex
         })
-        ReactDOM.findDOMNode(this.refs.textstrokecol).style.background = color.hex;
+        ReactDOM.findDOMNode(this.textstrokecolRef.current).style.background = color.hex;
     };
 
     changeObjectColor = (hex) => {
@@ -454,7 +457,7 @@ class Toolbar extends React.Component {
     }
 
     setGlow = (color) => {
-        ReactDOM.findDOMNode(this.refs.textglowcol).style.background = color.hex;
+        ReactDOM.findDOMNode(this.textglowcolRef.current).style.background = color.hex;
         this.setState({
             glowcolor: color.hex
         });
@@ -738,7 +741,7 @@ class Toolbar extends React.Component {
                     <div title="Font Family" className="font-familiy-container fontFamily">
                         <div>
                             <FontPicker
-                                ref={c => this.pickerRef = c}
+                                ref={this.pickerRef}
                                 apiKey="AIzaSyCOyeDUsAnL-jnWudXBKNNma9cXmXsT4tM"
                                 activeFontFamily={this.state.activeFontFamily}
                                 limit="150"
@@ -878,7 +881,7 @@ class Toolbar extends React.Component {
                                         <div className="toolbar-label">Color</div>
                                         <div className="font-color-container">
                                             <div className="colrsec" onClick={this.strokepickerOpen}>
-                                                <div ref="textstrokecol" className="primcol" style={{ background: this.state.backgroundcol }} />
+                                                <div ref={this.textstrokecolRef} className="primcol" style={{ background: this.state.backgroundcol }} />
                                                 <img className="arrowimg" src={require('../images/down-arrow.png')} alt="" />
                                             </div>
                                         </div>
@@ -919,7 +922,7 @@ class Toolbar extends React.Component {
                                         <div className="toolbar-label">Color</div>
                                         <div className="font-color-container">
                                             <div className="colrsec" onClick={this.glowpickerOpen}>
-                                                <div ref="textglowcol" className="primcol" style={{ background: this.state.glowbackgroundcol }} />
+                                                <div ref={this.textglowcolRef} className="primcol" style={{ background: this.state.glowbackgroundcol }} />
                                                 <img className="arrowimg" src={require('../images/down-arrow.png')} alt="" />
                                             </div>
                                         </div>
@@ -1012,15 +1015,14 @@ class Toolbar extends React.Component {
                         <Popup className="popupcontent"
                             trigger={<div className="toolbar-label">Stroke</div>}
                             position="bottom center"
-                            closeOnDocumentClick
-                        >
+                            closeOnDocumentClick>
                             <span>
                                 <div className="effects">
                                     <div className="effsection">
                                         <div className="toolbar-label stroke-label">Stroke Color</div>
                                         <div className="font-color-container">
                                             <div className="colrsec" onClick={this.strokepickerOpen}>
-                                                <div ref="textstrokecol" className="primcol strokecolpick" />
+                                                <div ref={this.textstrokecolRef} className="primcol strokecolpick" />
                                                 <img className="arrowimg" src={require('../images/down-arrow.png')} alt="" />
                                             </div>
                                             {
