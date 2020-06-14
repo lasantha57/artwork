@@ -173,7 +173,6 @@ class Footer extends React.Component {
         };
     }
 
-
     render() {
         let options = []
         for (let i = 1; i < 17; i++) {
@@ -183,34 +182,22 @@ class Footer extends React.Component {
         return (
             <Container className="footer">
                 <div className="footer-container">
-                    <div className="left-view">
+                    {/* <div className="left-view">
                         <div title="Undo" className="btn-action undoicon" onClick={this.undo}>
                             <div className="first">
                                 <img className="undo" src={require('../images/undo.png')} alt="" />
                             </div>
-                            <div className="second">
-                                Undo
-              </div>
+                            <div className="second">Undo</div>
                         </div>
                         <div className="divider" />
                         <div title="Redo" className="btn-action redoicon" onClick={this.redo}>
-                            <div className="second">
-                                Redo
-              </div>
+                            <div className="second">Redo</div>
                             <div className="first">
                                 <img className="redo" src={require('../images/redo.png')} alt="" />
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                     <div>
-                        {/* <div className="canvassize">
-            {
-              this.props.canvas ?
-              <span>{parseInt(this.props.canvas.width, 10)} x {parseInt(this.props.canvas.height, 10)} px</span>
-              :
-              <span>640 x 360 px</span>
-            }
-            </div> */}
                         {this.props.children}
                     </div>
                     <div className="right-view">

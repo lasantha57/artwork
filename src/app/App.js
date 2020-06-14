@@ -1,4 +1,3 @@
-// File Imports
 import React, { Component } from 'react';
 import { fabric } from 'fabric';
 import { Row, Col, Container } from "reactstrap";
@@ -26,8 +25,8 @@ class App extends Component {
             isOverlap: false,
             isGrid: false,
             sidebarWidth: 367,
-            canvaswidth: 640,
-            canvasheight: 360,
+            canvaswidth: 780,
+            canvasheight: 440,
             //defaultbg: require('./images/main-img.jpg'),
             fontBoldValue: 'normal',
             fontItalicValue: '',
@@ -55,7 +54,7 @@ class App extends Component {
         });
     }
 
-    downloadAsPNG = () => {
+    export = () => {
         var currentTime = new Date();
         var month = currentTime.getMonth() + 1;
         var day = currentTime.getDate();
@@ -175,11 +174,11 @@ class App extends Component {
                         <nav className="navbar navbar-expand-lg header-bar">
                             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <ul className="navbar-nav ml-md-auto">
-                                    <li className="nav-item active download">
+                                    {/* <li className="nav-item active download">
                                         <span className="btn btn-outline" onClick={this.downloadAsJSON}>Export JSON</span>
-                                    </li>
+                                    </li> */}
                                     <li className="nav-item active download">
-                                        <span className="btn btn-fill" onClick={this.downloadAsPNG}>Export Artwork</span>
+                                        <span className="btn btn-fill" onClick={this.export}>Export</span>
                                     </li>
                                 </ul>
                             </div>
@@ -197,7 +196,25 @@ class App extends Component {
                                         <span>TEXT</span>
                                     </div>
                                 </Tab>
-                                <Tab tabFor="vertical-tab-two" className="lasttab" onClick={() => this.toggleSidebar(true)}>
+                                <Tab tabFor="vertical-tab-two" className="lasttab">
+                                    <div className="edit-box">
+                                        <img src={require('./images/bg.jpg')} alt="" />
+                                        <span>BKGROUND</span>
+                                    </div>
+                                </Tab>
+                                <Tab tabFor="vertical-tab-three" className="lasttab">
+                                    <div className="edit-box">
+                                        <img src={require('./images/bg.jpg')} alt="" />
+                                        <span>PHOTOS</span>
+                                    </div>
+                                </Tab>
+                                <Tab tabFor="vertical-tab-four" className="lasttab">
+                                    <div className="edit-box">
+                                        <img src={require('./images/bg.jpg')} alt="" />
+                                        <span>ELEMENTS</span>
+                                    </div>
+                                </Tab>
+                                {/* <Tab tabFor="vertical-tab-two" className="lasttab" onClick={() => this.toggleSidebar(true)}>
                                     <div className="edit-box">
                                         <img src={require('./images/bg.jpg')} alt="" />
                                         <span>BKGROUND</span>
@@ -215,6 +232,7 @@ class App extends Component {
                                         <span>ELEMENTS</span>
                                     </div>
                                 </Tab>
+                                 */}
                             </TabList>
                             <div style={{ width: sidebarWidth }} className="left-side-panel">
                                 {collapse && (
@@ -238,7 +256,7 @@ class App extends Component {
 
                         <Footer canvas={this.state.canvas}>
                             <ul className="navbar-nav ml-md-auto">
-                                <li className="nav-item">
+                                {/* <li className="nav-item">
                                     <a className="nav-link switch" href="{null}" title="Display Grid">Grid <input type="checkbox" id="gridswitch" />
                                         <label htmlFor="gridswitch" onClick={this.showhideGrid}>Toggle</label>
                                     </a>
@@ -252,7 +270,7 @@ class App extends Component {
                                     <a className="nav-link switch" href="{null}" title="Overlap">Overlap <input type="checkbox" id="overlapswitch" />
                                         <label htmlFor="overlapswitch" onClick={this.setOverlap}>Toggle</label>
                                     </a>
-                                </li>
+                                </li> */}
                             </ul>
                         </Footer>
                     </div>

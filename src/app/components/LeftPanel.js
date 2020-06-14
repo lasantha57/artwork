@@ -151,7 +151,7 @@ class LeftPanel extends React.Component {
     addHeadingtxt = () => {
         var canvas = this.props.canvas;
         var text = new fabric.Textbox('Add Heading', {
-            fontFamily: 'Open Sans',
+            fontFamily: 'Montserrat',
             left: 100,
             top: 100,
             type: 'text',
@@ -167,7 +167,7 @@ class LeftPanel extends React.Component {
     addSubheadingtxt = () => {
         var canvas = this.props.canvas;
         var text = new fabric.Textbox('Add Subheading', {
-            fontFamily: 'Open Sans',
+            fontFamily: 'Montserrat',
             left: 100,
             top: 100,
             type: 'text',
@@ -183,7 +183,7 @@ class LeftPanel extends React.Component {
     addText = () => {
         var canvas = this.props.canvas;
         var text = new fabric.Textbox('Add text', {
-            fontFamily: 'Open Sans',
+            fontFamily: 'Montserrat',
             left: 100,
             top: 100,
             type: 'text',

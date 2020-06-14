@@ -19,7 +19,7 @@ class Toolbar extends React.Component {
         blurval: '1',
         offsetX: '1',
         offsetY: '1',
-        activeFontFamily: "Open Sans",
+        activeFontFamily: "Montserrat",
         savestateaction: true,
         displayColorPicker: false,
         displaystrokeColorPicker: false,
