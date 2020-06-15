@@ -1,12 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { fabric } from 'fabric';
 import { SketchPicker } from 'react-color';
 import { Row, Col, Container, Form, Input } from "reactstrap";
 import { TabPanel } from 'react-web-tabs';
 import { client } from 'filestack-react';
-import Popup from 'reactjs-popup'
-import { unique, saveCanvasState, selectObject } from './Helpers'
-//import $ from 'jquery';
+import Popup from 'reactjs-popup';
+import { unique, saveCanvasState, selectObject } from './Helpers';
 
 import { TabContent, TabPane, Nav, NavItem, NavLink } from 'reactstrap';
 import classnames from 'classnames';
@@ -74,7 +73,7 @@ const INIT_ELEMENT_ICONS = [
 //     require('../images/elements/dryer.svg')
 // ]
 
-class LeftPanel extends React.Component {
+class LeftPanel extends Component {
     state = {
         displaybgColorPicker: false,
         displaygrad1ColorPicker: false,
@@ -130,6 +129,12 @@ class LeftPanel extends React.Component {
                 this.incermentpage();
             }
         });
+
+        // REMOVE ME:
+        setTimeout(() => {
+            this.setBGcolor('#ffffff');
+        }, 100);
+
     }
 
     addShape = () => {
@@ -481,32 +486,32 @@ class LeftPanel extends React.Component {
     }
 
     pixaybay = () => {
-        fetch("//pixabay.com/api/?key=11095386-871fd43c33a92700d9bffb82d&q=" + this.state.searchkey + "&image_type=photo&pretty=true&page=" + this.state.page + "&per_page=24&safesearch=true")
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    this.setState({
-                        apiImg: result.hits
-                    });
-                },
-                (error) => {
-                    this.setState({
-                        isLoaded: true,
-                        error
-                    });
-                }
-            )
+        // fetch("//pixabay.com/api/?key=11095386-871fd43c33a92700d9bffb82d&q=" + this.state.searchkey + "&image_type=photo&pretty=true&page=" + this.state.page + "&per_page=24&safesearch=true")
+        //     .then(res => res.json())
+        //     .then(
+        //         (result) => {
+        //             this.setState({
+        //                 apiImg: result.hits
+        //             });
+        //         },
+        //         (error) => {
+        //             this.setState({
+        //                 isLoaded: true,
+        //                 error
+        //             });
+        //         }
+        //     )
     }
 
     unsplash = () => {
-        fetch("//api.unsplash.com/search/photos/?client_id=" + this.state.client_id + "&per_page=24&query=" + this.state.unsplashsearchkey + "&page=" + this.state.pagenum + "")
-            .then(res => res.json())
-            .then(data => {
-                this.setState({ unsplashImg: data.results });
-            })
-            .catch(err => {
-                console.log('Error!', err);
-            });
+        // fetch("//api.unsplash.com/search/photos/?client_id=" + this.state.client_id + "&per_page=24&query=" + this.state.unsplashsearchkey + "&page=" + this.state.pagenum + "")
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         this.setState({ unsplashImg: data.results });
+        //     })
+        //     .catch(err => {
+        //         console.log('Error!', err);
+        //     });
     }
 
     searchUnsplashimg = (e) => {
@@ -552,8 +557,8 @@ class LeftPanel extends React.Component {
 
     searchImage = (e) => {
         if (e.key === 'Enter') {
-            e.preventDefault(); // Let's stop this event.
-            e.stopPropagation(); // Really this time.
+            e.preventDefault();
+            e.stopPropagation();
             this.setState({
                 searchkey: e.target.value
             }, () => {
@@ -602,7 +607,7 @@ class LeftPanel extends React.Component {
                     <Container className="text-editer">
                         <Row>
                             <Col>
-                                <p className="first-title text-center">Add some text to your artwork.</p>
+                                <p className="first-title text-center text-primary">Add some text to your artwork.</p>
                             </Col>
                         </Row>
                         <Row>

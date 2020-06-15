@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { fabric } from 'fabric';
 import { saveCanvasState, initCenteringGuidelines, initAligningGuidelines, selectObject } from './Helpers'
 import $ from 'jquery';
 
-class FabricCanvas extends React.Component {
+class FabricCanvas extends Component {
     state = {
         displaybgColorPicker: false,
         subtarget: null
@@ -22,7 +22,6 @@ class FabricCanvas extends React.Component {
     }
 
     componentDidMount() {
-        // Make a New Canvas
         this.canvas = new fabric.Canvas('main-canvas', {
             preserveObjectStacking: true,
             width: this.props.state.canvaswidth,
@@ -46,9 +45,6 @@ class FabricCanvas extends React.Component {
 
     initCanvasEvents() {
         var lthis = this;
-        /*$(".main-area").mousedown(function(e) {
-              e.stopImmediatePropagation();
-        });*/
         $(".canvas-area").click(function () {
             lthis.canvas.discardActiveObject();
             lthis.canvas.renderAll();
@@ -144,7 +140,7 @@ class FabricCanvas extends React.Component {
                 top: this.canvasHeight - e.target.get('height')
             });
         }
-        // Loop through objects
+
         this.canvas.forEachObject(function (obj) {
             if (obj === e.target) return;
             // If objects intersect
@@ -271,7 +267,6 @@ class FabricCanvas extends React.Component {
     deleteCanvasBg = () => {
         this.canvas.backgroundColor = '';
         this.canvas.renderAll();
-        //if (!lcanvas) lcanvas = canvas;
         var objects = this.canvas.getObjects().filter(function (o) {
             return o.bg === true;
         });

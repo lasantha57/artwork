@@ -166,8 +166,8 @@ class App extends Component {
                             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="{null}bs-example-navbar-collapse-1">
                                 <span className="navbar-toggler-icon"></span>
                             </button>
-                            {/* <a className="navbar-brand" href="/"><img src={require('./images/logo.png')} alt="" /></a> */}
-                            <div className="left-link"><span className="nav-link brand">Otter Artwork Editor</span></div>
+                            <a className="navbar-brand" href="/"><img src={require('./images/logo.svg')} alt="" /> <small>Artwork Editor</small></a>
+                            {/* <div className="left-link"><span className="nav-link brand text-primary"><strong>Otter Artwork Editor</strong></span></div> */}
                         </nav>
                     </Col>
                     <Col>
@@ -178,7 +178,7 @@ class App extends Component {
                                         <span className="btn btn-outline" onClick={this.downloadAsJSON}>Export JSON</span>
                                     </li> */}
                                     <li className="nav-item active download">
-                                        <span className="btn btn-fill" onClick={this.export}>Export</span>
+                                        <span className="btn btn-success" onClick={this.export}>Export</span>
                                     </li>
                                 </ul>
                             </div>
@@ -190,61 +190,40 @@ class App extends Component {
                     <div className="tabpanel">
                         <Tabs defaultTab="vertical-tab-one" vertical className="vertical-tabs">
                             <TabList>
-                                <Tab tabFor="vertical-tab-one" className="lasttab" onClick={() => this.toggleSidebar(true)}>
+                                <Tab tabFor="vertical-tab-one" className="lasttab" onClick={() => this.toggleSidebar(!this.state.collapse)}>
                                     <div className="edit-box">
-                                        <img src={require('./images/textbg.jpg')} alt="" />
+                                        <i className="fas fa-font fa-2x text-muted"></i>
                                         <span>TEXT</span>
                                     </div>
                                 </Tab>
-                                <Tab tabFor="vertical-tab-two" className="lasttab">
+                                <Tab tabFor="vertical-tab-one" className="lasttab" onClick={() => this.toggleSidebar(false)}>
                                     <div className="edit-box">
-                                        <img src={require('./images/bg.jpg')} alt="" />
+                                        <i className="fas fa-border-all fa-2x text-muted"></i>
                                         <span>BKGROUND</span>
                                     </div>
                                 </Tab>
-                                <Tab tabFor="vertical-tab-three" className="lasttab">
+                                <Tab tabFor="vertical-tab-one" className="lasttab" onClick={() => this.toggleSidebar(false)}>
                                     <div className="edit-box">
-                                        <img src={require('./images/bg.jpg')} alt="" />
+                                        <i className="fas fa-images fa-2x text-muted"></i>
                                         <span>PHOTOS</span>
                                     </div>
                                 </Tab>
-                                <Tab tabFor="vertical-tab-four" className="lasttab">
+                                <Tab tabFor="vertical-tab-one" className="lasttab" onClick={() => this.toggleSidebar(false)}>
                                     <div className="edit-box">
-                                        <img src={require('./images/bg.jpg')} alt="" />
+                                        <i className="fas fa-shapes fa-2x text-muted"></i>
                                         <span>ELEMENTS</span>
                                     </div>
                                 </Tab>
-                                {/* <Tab tabFor="vertical-tab-two" className="lasttab" onClick={() => this.toggleSidebar(true)}>
-                                    <div className="edit-box">
-                                        <img src={require('./images/bg.jpg')} alt="" />
-                                        <span>BKGROUND</span>
-                                    </div>
-                                </Tab>
-                                <Tab tabFor="vertical-tab-three" className="lasttab" onClick={() => this.toggleSidebar(true)}>
-                                    <div className="edit-box">
-                                        <img src={require('./images/bg.jpg')} alt="" />
-                                        <span>PHOTOS</span>
-                                    </div>
-                                </Tab>
-                                <Tab tabFor="vertical-tab-four" className="lasttab" onClick={() => this.toggleSidebar(true)}>
-                                    <div className="edit-box">
-                                        <img src={require('./images/bg.jpg')} alt="" />
-                                        <span>ELEMENTS</span>
-                                    </div>
-                                </Tab>
-                                 */}
                             </TabList>
                             <div style={{ width: sidebarWidth }} className="left-side-panel">
                                 {collapse && (
                                     <LeftPanel canvas={this.state.canvas} />
                                 )}
                             </div>
-                            <div
-                                className="btn-toggle"
-                                onClick={() => this.toggleSidebar(false)}
-                                style={{ opacity: collapse ? 1 : 0 }}
-                            >
-                                <img className="arrowimage" src={require('./images/left.png')} alt="" />
+                            <div className="btn-toggle"
+                                onClick={() => this.toggleSidebar(!this.state.collapse)}
+                                style={{ opacity: collapse ? 1 : 0 }}>
+                                <i className="fas fa-chevron-left arrowimage"></i>
                             </div>
                         </Tabs>
                     </div>

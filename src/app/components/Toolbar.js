@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { fabric } from 'fabric';
 import { SketchPicker } from 'react-color';
 import FontPicker from 'font-picker-react';
@@ -8,7 +8,7 @@ import { Container, Collapse } from "reactstrap";
 import $ from 'jquery';
 var FontFaceObserver = require('fontfaceobserver');
 
-class Toolbar extends React.Component {
+class Toolbar extends Component {
     state = {
         textColor: '',
         glowColor: '',
@@ -1060,7 +1060,7 @@ class Toolbar extends React.Component {
                 <div className="rightbar">
                     <div title="Duplicate" className="toolbar-label btn-duplicate" onClick={this.clone}>Duplicate</div>
                     <div title="Delete" className="btn-delete" onClick={this.deleteItem}>
-                        <img className="arrow" src={require('../images/delete.png')} alt="" />
+                        <span><i className="far fa-trash-alt text-danger arrow"></i></span>
                     </div>
                 </div>
             </Container>
