@@ -55,14 +55,14 @@ class App extends Component {
     }
 
     export = () => {
-        var currentTime = new Date();
-        var month = currentTime.getMonth() + 1;
-        var day = currentTime.getDate();
-        var year = currentTime.getFullYear();
-        var hours = currentTime.getHours();
-        var minutes = currentTime.getMinutes();
-        var seconds = currentTime.getSeconds();
-        var fileName = month + '' + day + '' + year + '' + hours + '' + minutes + '' + seconds;
+        let currentTime = new Date();
+        let month = currentTime.getMonth() + 1;
+        let day = currentTime.getDate();
+        let year = currentTime.getFullYear();
+        let hours = currentTime.getHours();
+        let minutes = currentTime.getMinutes();
+        let seconds = currentTime.getSeconds();
+        let fileName = month + '' + day + '' + year + '' + hours + '' + minutes + '' + seconds;
         const canvasdata = document.getElementById('main-canvas');
         const canvasDataUrl = canvasdata.toDataURL().replace(/^data:image\/[^;]*/, 'data:application/octet-stream'),
             link = document.createElement('a');
@@ -72,7 +72,7 @@ class App extends Component {
         link.setAttribute('target', '_blank');
         link.setAttribute('download', fileName);
         if (document.createEvent) {
-            var evtObj = document.createEvent('MouseEvents');
+            let evtObj = document.createEvent('MouseEvents');
             evtObj.initEvent('click', true, true);
             link.dispatchEvent(evtObj);
         } else if (link.click) {
@@ -81,20 +81,20 @@ class App extends Component {
     }
 
     downloadAsJSON = () => {
-        var currentTime = new Date();
-        var month = currentTime.getMonth() + 1;
-        var day = currentTime.getDate();
-        var year = currentTime.getFullYear();
-        var hours = currentTime.getHours();
-        var minutes = currentTime.getMinutes();
-        var seconds = currentTime.getSeconds();
-        var fileName = month + '' + day + '' + year + '' + hours + '' + minutes + '' + seconds;
-        var canvasdata = this.state.canvas.toDatalessJSON();
-        var string = JSON.stringify(canvasdata);
-        var file = new Blob([string], {
+        let currentTime = new Date();
+        let month = currentTime.getMonth() + 1;
+        let day = currentTime.getDate();
+        let year = currentTime.getFullYear();
+        let hours = currentTime.getHours();
+        let minutes = currentTime.getMinutes();
+        let seconds = currentTime.getSeconds();
+        let fileName = month + '' + day + '' + year + '' + hours + '' + minutes + '' + seconds;
+        let canvasdata = this.state.canvas.toDatalessJSON();
+        let string = JSON.stringify(canvasdata);
+        let file = new Blob([string], {
             type: 'application/json'
         });
-        var a = document.createElement('a');
+        let a = document.createElement('a');
         a.href = URL.createObjectURL(file);
         a.download = fileName;
         document.body.appendChild(a);
@@ -106,19 +106,19 @@ class App extends Component {
         this.setState({
             isSnap: !this.state.isSnap,
         });
-        var offstate = document.querySelectorAll('#snapswitch');
-        for (var j = 0; j < offstate.length; j++) {
+        let offstate = document.querySelectorAll('#snapswitch');
+        for (let j = 0; j < offstate.length; j++) {
             offstate[j].checked = this.state.isSnap;
         }
     }
 
     showhideGrid = () => {
-        var isGrid = !this.state.isGrid;
+        let isGrid = !this.state.isGrid;
         this.setState({
             isGrid: isGrid,
         });
         if (isGrid) {
-            for (var i = 0; i < (650 / this.state.gridsize); i++) {
+            for (let i = 0; i < (650 / this.state.gridsize); i++) {
                 this.state.canvas.add(new fabric.Line([i * this.state.gridsize, 0, i * this.state.gridsize, 650], {
                     stroke: '#ccc',
                     selectable: false
@@ -131,15 +131,15 @@ class App extends Component {
         } else {
             this.clearGrid();
         }
-        var offstate = document.querySelectorAll('#gridswitch');
-        for (var j = 0; j < offstate.length; j++) {
+        let offstate = document.querySelectorAll('#gridswitch');
+        for (let j = 0; j < offstate.length; j++) {
             offstate[j].checked = this.state.isGrid;
         }
         this.state.canvas.renderAll();
     }
 
     clearGrid = () => {
-        var objects = this.state.canvas.getObjects('line');
+        let objects = this.state.canvas.getObjects('line');
         for (let i in objects) {
             this.state.canvas.remove(objects[i]);
         }
@@ -149,8 +149,8 @@ class App extends Component {
         this.setState({
             isOverlap: !this.state.isOverlap,
         });
-        var offoverlap = document.querySelectorAll('#overlapswitch');
-        for (var j = 0; j < offoverlap.length; j++) {
+        let offoverlap = document.querySelectorAll('#overlapswitch');
+        for (let j = 0; j < offoverlap.length; j++) {
             offoverlap[j].checked = this.state.isOverlap;
         }
     }
@@ -190,13 +190,13 @@ class App extends Component {
                     <div className="tabpanel">
                         <Tabs defaultTab="vertical-tab-one" vertical className="vertical-tabs">
                             <TabList>
-                                <Tab tabFor="vertical-tab-one" className="lasttab" onClick={() => this.toggleSidebar(!this.state.collapse)}>
+                                <Tab tabFor="vertical-tab-one" className="lasttab" onClick={() => this.toggleSidebar(true)}>
                                     <div className="edit-box">
                                         <i className="fas fa-font fa-2x text-muted"></i>
                                         <span>TEXT</span>
                                     </div>
                                 </Tab>
-                                <Tab tabFor="vertical-tab-one" className="lasttab" onClick={() => this.toggleSidebar(false)}>
+                                <Tab tabFor="vertical-tab-two" className="lasttab" onClick={() => this.toggleSidebar(true)}>
                                     <div className="edit-box">
                                         <i className="fas fa-border-all fa-2x text-muted"></i>
                                         <span>BKGROUND</span>
