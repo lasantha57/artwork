@@ -486,32 +486,32 @@ class LeftPanel extends Component {
     }
 
     pixaybay = () => {
-        // fetch("//pixabay.com/api/?key=11095386-871fd43c33a92700d9bffb82d&q=" + this.state.searchkey + "&image_type=photo&pretty=true&page=" + this.state.page + "&per_page=24&safesearch=true")
-        //     .then(res => res.json())
-        //     .then(
-        //         (result) => {
-        //             this.setState({
-        //                 apiImg: result.hits
-        //             });
-        //         },
-        //         (error) => {
-        //             this.setState({
-        //                 isLoaded: true,
-        //                 error
-        //             });
-        //         }
-        //     )
+        fetch("https://pixabay.com/api/?key=11095386-871fd43c33a92700d9bffb82d&q=" + this.state.searchkey + "&image_type=photo&pretty=true&page=" + this.state.page + "&per_page=24&safesearch=true")
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    this.setState({
+                        apiImg: result.hits
+                    });
+                },
+                (error) => {
+                    this.setState({
+                        isLoaded: true,
+                        error
+                    });
+                }
+            )
     }
 
     unsplash = () => {
-        // fetch("//api.unsplash.com/search/photos/?client_id=" + this.state.client_id + "&per_page=24&query=" + this.state.unsplashsearchkey + "&page=" + this.state.pagenum + "")
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         this.setState({ unsplashImg: data.results });
-        //     })
-        //     .catch(err => {
-        //         console.log('Error!', err);
-        //     });
+        fetch("https://api.unsplash.com/search/photos/?client_id=" + this.state.client_id + "&per_page=24&query=" + this.state.unsplashsearchkey + "&page=" + this.state.pagenum + "")
+            .then(res => res.json())
+            .then(data => {
+                this.setState({ unsplashImg: data.results });
+            })
+            .catch(err => {
+                console.log('Error!', err);
+            });
     }
 
     searchUnsplashimg = (e) => {
