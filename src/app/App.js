@@ -9,12 +9,12 @@ import LeftPanel from './components/LeftPanel';
 import Footer from './components/Footer';
 
 import './App.scss';
-import './Styles/Navbar.scss'
-import './Styles/TabView.scss'
-import './Styles/LeftSidePanel.scss'
-import './Styles/Footer.scss'
-import './Styles/FabricCanvas.scss'
-import './Styles/Toolbar.scss'
+import './styles/Navbar.scss'
+import './styles/TabView.scss'
+import './styles/LeftSidePanel.scss'
+import './styles/Footer.scss'
+import './styles/FabricCanvas.scss'
+import './styles/Toolbar.scss'
 
 class App extends Component {
     constructor(props) {

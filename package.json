@@ -9,7 +9,6 @@
         "font-picker-react": "3.5.2",
         "fontfaceobserver": "2.1.0",
         "jquery": "3.5.1",
-        "node-sass": "4.14.1",
         "react": "16.13.1",
         "react-color": "2.18.1",
         "react-dom": "16.13.1",
@@ -17,11 +16,14 @@
         "react-scripts": "3.4.1",
         "react-web-tabs": "1.0.1",
         "reactjs-popup": "1.5.0",
-        "reactstrap": "8.4.1"
+        "reactstrap": "8.4.1",
+        "@babel/runtime": "^7.22.10",
+        "sass": "^1.66.1"
     },
     "devDependencies": {
         "env-cmd": "10.1.0",
-        "source-map-explorer": "2.4.2"
+        "source-map-explorer": "2.4.2",
+        "@babel/plugin-proposal-private-property-in-object": "7.21.11"
     },
     "scripts": {
         "analyze-build": "source-map-explorer 'build/static/js/*.js'",
