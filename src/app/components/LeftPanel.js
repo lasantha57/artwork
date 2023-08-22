@@ -735,7 +735,7 @@ class LeftPanel extends Component {
                     </Container>
                 </TabPanel>
                 <TabPanel tabId="vertical-tab-three">
-                    <Container className="text-editer">
+                    <Container className="photos">
                         <Nav tabs>
                             <Col sm="6">
                                 <NavItem>
@@ -744,7 +744,7 @@ class LeftPanel extends Component {
                                         onClick={() => this.imagetoggle('1')}
                                     >
                                         Pixabay
-                  </NavLink>
+                                    </NavLink>
                                 </NavItem>
                             </Col>
                             <Col sm="6">
@@ -754,7 +754,7 @@ class LeftPanel extends Component {
                                         onClick={() => this.imagetoggle('2')}
                                     >
                                         Unsplash
-                  </NavLink>
+                                    </NavLink>
                                 </NavItem>
                             </Col>
                         </Nav>
@@ -813,7 +813,7 @@ class LeftPanel extends Component {
                                                 onClick={() => this.toggle('1')}
                                             >
                                                 Shapes
-                      </NavLink>
+                                            </NavLink>
                                         </NavItem>
                                     </Col>
                                     <Col sm="4">
@@ -823,7 +823,7 @@ class LeftPanel extends Component {
                                                 onClick={() => this.toggle('2')}
                                             >
                                                 Icons
-                      </NavLink>
+                                            </NavLink>
                                         </NavItem>
                                     </Col>
                                     <Col sm="4">
@@ -833,7 +833,7 @@ class LeftPanel extends Component {
                                                 onClick={() => { this.toggle('3'); }}
                                             >
                                                 ClipArts
-                      </NavLink>
+                                            </NavLink>
                                         </NavItem>
                                     </Col>
                                 </Nav>

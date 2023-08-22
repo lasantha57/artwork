@@ -27,7 +27,7 @@ class App extends Component {
             sidebarWidth: 367,
             canvaswidth: 780,
             canvasheight: 440,
-            //defaultbg: require('./images/main-img.jpg'),
+            // defaultbg: require('./images/main-img.jpg'),
             fontBoldValue: 'normal',
             fontItalicValue: '',
             fontUnderlineValue: '',
@@ -48,6 +48,8 @@ class App extends Component {
 
     toggleSidebar = (type) => {
         this.setState({ collapse: type });
+
+        // console.log(this.state)
 
         this.setState({
             sidebarWidth: type ? 367 : 0
@@ -202,13 +204,13 @@ class App extends Component {
                                         <span>BKGROUND</span>
                                     </div>
                                 </Tab>
-                                <Tab tabFor="vertical-tab-one" className="lasttab" onClick={() => this.toggleSidebar(false)}>
+                                <Tab tabFor="vertical-tab-three" className="lasttab" onClick={() => this.toggleSidebar(true)}>
                                     <div className="edit-box">
                                         <i className="fas fa-images fa-2x text-muted"></i>
                                         <span>PHOTOS</span>
                                     </div>
                                 </Tab>
-                                <Tab tabFor="vertical-tab-one" className="lasttab" onClick={() => this.toggleSidebar(false)}>
+                                <Tab tabFor="vertical-tab-four" className="lasttab" onClick={() => this.toggleSidebar(true)}>
                                     <div className="edit-box">
                                         <i className="fas fa-shapes fa-2x text-muted"></i>
                                         <span>ELEMENTS</span>
